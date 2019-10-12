@@ -1,0 +1,202 @@
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3 {
+	font-family: cursive;
+}
+
+/* start top */
+.top {
+	margin: 10px auto;
+	padding: 10px;
+	border-bottom: 1px solid #3498db;
+	max-width: 900px;
+	/*this property is for making the display avatar and top-content responsive*/
+	display: flex;
+	/*make top-content move above avatar in small devices*/
+	flex-wrap: wrap;
+	/*automatically make space between flex items to make them fill flex container*/
+	justify-content: space-between;
+}
+
+.top .top-content {
+	padding: 10px;
+	text-align: right;
+}
+
+.top h1 {
+	color: #2980b9;
+}
+
+.top strong {
+	color: #3498db;
+	font-size: 20px;
+}
+
+.top .avatar img {
+	padding: 6px;
+	border: 1px solid #aaa;
+	box-shadow: 5px 5px 3px #eee;
+}
+
+/* start slider */
+.slider {
+	max-width: 900px;
+	position: relative;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+.slider img {
+	max-width: 100%;
+}
+
+/* start portfolio */
+.portfolio {
+	max-width: 900px;
+	padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 40px auto;
+	justify-content: space-between;
+}
+
+.portfolio h2 {
+	width: 100%;
+	color: #aaa;
+}
+
+.box {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 10px;
+	transition: all 0.4s ease-in-out;
+	/*by making width 30%, we can display up to 3 flex items per row on big screen(desktop)*/
+	width: 30%;
+	text-align: center;
+}
+
+.box figure {
+	margin: 0;
+}
+
+.box img {
+	width: 100%;
+	max-height: 125px;
+}
+
+.box h3 {
+	color: #3498db;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.box p {
+	font-size: 18px;
+	text-align: left;
+	margin-top: 6px;
+	word-spacing: 3px;
+}
+
+.box:hover {
+	box-shadow: 5px 5px 3px #eee, -5px 0 3px #eee;
+}
+
+/*start tablet media*/
+@media screen and (min-width: 451px) and (max-width:768px) {
+
+	/*start top*/
+	.top h1{
+		font-size: 25px;
+		position: relative;
+	}
+
+	/*start portfolio*/
+	.box {
+		text-align: left;
+		/*on medium screens(tablet), we can display up to 2 flex items per row*/
+		width: 40%;
+		margin: 15px auto;
+	}
+
+	.box h3 {
+	    position: relative;
+	}
+
+	.box h3:before {
+	    content: "";
+	    position: absolute;
+	    width: 50px;
+	    height: 1px;
+	    bottom: 0;
+	    left: 0;
+	    border-bottom: 2px solid #e74c3c;
+	}
+
+	.box p {
+		font-size: 17px;
+	}
+}
+
+/*start mobile media*/
+@media screen and (max-width:450px) {
+	/*start top*/
+	.avatar {
+		margin: auto;
+		width: 55%;
+		text-align: center;
+	}
+
+	.avatar img{
+		width: 90px;
+		height: 90px;
+	}
+
+	.top h1 {
+		font-size: 25px;
+		margin:10px 0;
+	}
+
+	.top strong {
+		font-size: 16px;
+	}
+
+	.top .top-content {
+		width: 100%;
+		padding: 0;
+		text-align: center;
+	}
+
+	/*start portfolio*/
+	.portfolio {
+		flex-direction: column;
+	}
+
+	.box {
+		text-align: left;
+		/*on small screen(mobile), we display only one flex item on each row*/
+		width: 90%;
+		margin: 15px auto;
+	}
+
+	.box h3 {
+	    position: relative;
+	}
+
+	.box h3:before {
+	    content: "";
+	    position: absolute;
+	    width: 50px;
+	    height: 1px;
+	    bottom: 0;
+	    left: 0;
+	    border-bottom: 2px solid #e74c3c;
+	}
+
+	.box p {
+		font-size: 16px;
+	}
+}
